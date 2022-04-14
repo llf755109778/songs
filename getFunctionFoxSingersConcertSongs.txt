@@ -1,0 +1,102 @@
+singer_id:26300, singer:Clock, team:Clock
+singer_id:26300, singer:Clock, team:Clock
+singer_id:06400, singer:D.Holic, team:D.Holic
+singer_id:06400, singer:D.Holic, team:D.Holic
+singer_id:20400, singer:DESTINY, team:DESTINY
+singer_id:20400, singer:DESTINY, team:DESTINY
+singer_id:26600, singer:FANATICS, team:FANATICS
+singer_id:26600, singer:FANATICS, team:FANATICS
+singer_id:20500, singer:FREE'SM, team:FREE'SM
+singer_id:20500, singer:FREE'SM, team:FREE'SM
+singer_id:11800, singer:Fantastie, team:Fantastie
+singer_id:11800, singer:Fantastie, team:Fantastie
+singer_id:06100, singer:Four Ladies, team:Four Ladies
+singer_id:06100, singer:Four Ladies, team:Four Ladies
+singer_id:04200, singer:f(x), team:f(x)
+singer_id:04200, singer:f(x), team:f(x)
+singer_id:20900, singer:G-reyish, team:G-reyish
+singer_id:20900, singer:G-reyish, team:G-reyish
+singer_id:20700, singer:GIRLKIND, team:GIRLKIND
+singer_id:20700, singer:GIRLKIND, team:GIRLKIND
+singer_id:20600, singer:Gavy NJ, team:Gavy NJ
+singer_id:20600, singer:Gavy NJ, team:Gavy NJ
+singer_id:14801, singer:Seehee, team:Girl Crush
+singer_id:14801, singer:Seehee, team:Girl Crush
+singer_id:14803, singer:Taeri, team:Girl Crush
+singer_id:14803, singer:Taeri, team:Girl Crush
+singer_id:14804, singer:Zia, team:Girl Crush
+singer_id:14804, singer:Zia, team:Girl Crush
+singer_id:14800, singer:Girl Crush, team:Girl Crush
+singer_id:14800, singer:Girl Crush, team:Girl Crush
+singer_id:17200, singer:Hey Girls, team:Hey Girls
+singer_id:17200, singer:Hey Girls, team:Hey Girls
+singer_id:21000, singer:Heymiss, team:Heymiss
+singer_id:21000, singer:Heymiss, team:Heymiss
+singer_id:27000, singer:Honey Popcorn, team:Honey Popcorn
+singer_id:27000, singer:Honey Popcorn, team:Honey Popcorn
+singer_id:13917, singer:金序炫, team:Hot Place
+singer_id:13917, singer:金序炫, team:Hot Place
+singer_id:13918, singer:姜时炫, team:Hot Place
+singer_id:13918, singer:姜时炫, team:Hot Place
+singer_id:13919, singer:林连智, team:Hot Place
+singer_id:13919, singer:林连智, team:Hot Place
+singer_id:18400, singer:I FI, team:I FI
+singer_id:18400, singer:I FI, team:I FI
+singer_id:21101, singer:Miba, team:M.O.A
+singer_id:21101, singer:Miba, team:M.O.A
+singer_id:21102, singer:孟艺妍, team:M.O.A
+singer_id:21102, singer:孟艺妍, team:M.O.A
+singer_id:21700, singer:Puretty, team:Puretty
+singer_id:21700, singer:Puretty, team:Puretty
+singer_id:12300, singer:Lady.B, team:Lady.B
+singer_id:12300, singer:Lady.B, team:Lady.B
+singer_id:25900, singer:MODEL, team:MODEL
+singer_id:25900, singer:MODEL, team:MODEL
+singer_id:18000, singer:Marmello, team:Marmello
+singer_id:18000, singer:Marmello, team:Marmello
+singer_id:21200, singer:May Queen, team:May Queen
+singer_id:21200, singer:May Queen, team:May Queen
+singer_id:19300, singer:Merit, team:Merit
+singer_id:19300, singer:Merit, team:Merit
+singer_id:21300, singer:My Darling, team:My Darling
+singer_id:21300, singer:My Darling, team:My Darling
+singer_id:04700, singer:miss A, team:miss A
+singer_id:04700, singer:miss A, team:miss A
+singer_id:12711, singer:林智英, team:NATURE
+singer_id:12711, singer:林智英, team:NATURE
+singer_id:07300, singer:Purfles, team:Purfles
+singer_id:07300, singer:Purfles, team:Purfles
+singer_id:09200, singer:QUEENDOM, team:QUEENDOM
+singer_id:09200, singer:QUEENDOM, team:QUEENDOM
+singer_id:21800, singer:ROBUST, team:ROBUST
+singer_id:21800, singer:ROBUST, team:ROBUST
+singer_id:15600, singer:Remember, team:Remember
+singer_id:15600, singer:Remember, team:Remember
+singer_id:21900, singer:Rose Finger, team:Rose Finger
+singer_id:21900, singer:Rose Finger, team:Rose Finger
+singer_id:22200, singer:SATURDAY, team:SATURDAY
+singer_id:22200, singer:SATURDAY, team:SATURDAY
+singer_id:18600, singer:SIO.SIJAK, team:SIO.SIJAK
+singer_id:18600, singer:SIO.SIJAK, team:SIO.SIJAK
+singer_id:07700, singer:SPICA, team:SPICA
+singer_id:07700, singer:SPICA, team:SPICA
+singer_id:22100, singer:Sam Suni, team:Sam Suni
+singer_id:22100, singer:Sam Suni, team:Sam Suni
+singer_id:18700, singer:Sixth Sense, team:Sixth Sense
+singer_id:18700, singer:Sixth Sense, team:Sixth Sense
+singer_id:18800, singer:Sol-T, team:Sol-T
+singer_id:18800, singer:Sol-T, team:Sol-T
+singer_id:07600, singer:Switch, team:Switch
+singer_id:07600, singer:Switch, team:Switch
+singer_id:13200, singer:Switch Berry, team:Switch Berry
+singer_id:13200, singer:Switch Berry, team:Switch Berry
+singer_id:22500, singer:The Starz, team:The Starz
+singer_id:22500, singer:The Starz, team:The Starz
+singer_id:22600, singer:Two X, team:Two X
+singer_id:22600, singer:Two X, team:Two X
+singer_id:17800, singer:VIVA, team:VIVA
+singer_id:17800, singer:VIVA, team:VIVA
+singer_id:17900, singer:Yellow Bee, team:Yellow Bee
+singer_id:17900, singer:Yellow Bee, team:Yellow Bee
+singer_id:08100, singer:ZZBAE, team:ZZBAE
+singer_id:08100, singer:ZZBAE, team:ZZBAE
