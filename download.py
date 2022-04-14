@@ -54,7 +54,7 @@ def team():
     session = DBSession()
     lists = session.query(Team).all()
     p = 0
-    h = 167
+    h = 178
     for i in lists:
         if p < h:
             p += 1

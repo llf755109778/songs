@@ -1,4 +1,3 @@
-import datetime
 import hashlib
 import os
 import time
@@ -6,6 +5,8 @@ from random import random
 
 from download import cmd
 from functions import FunctionFoxSongs, FunctionFoxSingersOfTeam
+
+__cnt__ = 0
 
 
 def hexMd5(str):
@@ -40,6 +41,7 @@ def makePic(basePath, filename, url):
         print("文件夹：", path, " 创建成功")
 
     if not os.path.exists(filePath):
+        time.sleep(0.5)
         if os.system(cmd.format('"' + path + '"', '"##' + filename + '.jpg"', url)) == 0:
             print("文件：", filePath, " 创建成功")
         else:
@@ -76,6 +78,7 @@ def makeVideo(basePath, detail, title, session):
 def upload(detail, path, title, v, type):
     if len(v) > 5:
         if v.startswith("http://foxvod.zero248.top"):
+            time.sleep(1)
             FunctionFoxSongsResponse = FunctionFoxSongs(detail.id).request()
             if FunctionFoxSongsResponse["msg"] == 200:
                 items = FunctionFoxSongsResponse["item"]
@@ -91,8 +94,17 @@ def upload(detail, path, title, v, type):
                             # if v.rfind(".jpg") != -1:
                             #     v = v[:v.rfind(".mp4")]
             else:
-                print("请求失败： ", FunctionFoxSongsResponse)
-                return -1
+                global __cnt__
+                __cnt__ += 1
+                t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+                print(t, "请求失败： ", FunctionFoxSongsResponse)
+                with open("failDownload.txt", "a+", encoding='utf-8') as file:
+                    file.writelines("t {}\n".format(detail))
+                if __cnt__ == 10:
+                    return -1
+                else:
+                    time.sleep(2)
+                    return 1
         else:
             # print("not startswith ", "http://foxvod.zero248.top")
             return 1
@@ -100,7 +112,9 @@ def upload(detail, path, title, v, type):
         print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), title)
         if download(path, title, v, type) != 0:
             return -1
-    return 0
+        else:
+            return 0
+    return 1
 
 
 def download(path, title, v, type):
