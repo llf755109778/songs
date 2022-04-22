@@ -4,9 +4,6 @@ from db import DBSession
 from entity import *
 from util import *
 
-basePath = "E:/阿里云盘/songs"
-cmd = "aria2c  --dir={} --out={} {}"
-
 
 def video(singer, basePath, session):
     res = 0
@@ -54,7 +51,7 @@ def team():
     session = DBSession()
     lists = session.query(Team).all()
     p = 0
-    h = 178
+    h = 30
     for i in lists:
         if p < h:
             p += 1
@@ -81,7 +78,7 @@ if __name__ == '__main__':
     else:
         print("任务失败")
     '''
-    IDMan.exe /d http://foxvod.zero248.top/875471e135ce4f64b4e83d0e89b320c1/aa606d55c41044efa67b09fae626b00d-2e79a
-    3cbe11809805ee00b732fceb478-sd.mp4?auth_key=1649818623-590feb7135eb487992b8f6ad63c11f1a-0-de48fe22737f816ca03d
-    a988eeef5110 /f 123.mp4 /p E:\阿里云盘
+    IDMan.exe /f 123.mp4 /p E:\阿里云盘 /d "http://yizhen.file.alimmdn.com/videos/24da78aaf7fa4152"
+    
+    
     '''

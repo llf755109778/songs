@@ -6,7 +6,7 @@ from db import *
 from functions import *
 
 song_id = ""
-__TIME__ = 0.75
+__TIME__ = 0.5
 iii = 0
 
 
@@ -20,14 +20,20 @@ def getFunctionFoxSongs(song_id, session):
                 #  写入数据库
                 session.execute(VideoDetails.__table__.insert(), item)
                 print("song_id:{}, FunctionFoxSongsResponse:{}".format(song_id, items))
-    else:
+    elif FunctionFoxSongsResponse["msg"] == 400:
         # print("here is :", __file__, sys._getframe().f_lineno, "response code not 200!!!")
         with open("getFunctionFoxSongs.txt", "a+", encoding='utf-8') as file:
             file.writelines("song_id:{}\n".format(song_id))
+        print("error: ", FunctionFoxSongsResponse)
         # global iii
         # if iii == 30:
         #     return -1
         # iii += 1
+    else:
+        with open("getFunctionFoxSongs.txt", "a+", encoding='utf-8') as file:
+            file.writelines("song_id:{}\n".format(song_id))
+        print("error: ", FunctionFoxSongsResponse)
+        return -1
     return 0
 
 
@@ -51,7 +57,7 @@ def getFunctionFoxRandom(conert_id, session):
 
 
 def getFunctionFoxSingersConcertSongs(singer_id, singer, team, session):
-    types = ["songs", "concert"]
+    types = ["songs"]
     for type in types:
         time.sleep(__TIME__)
         FoxSingersConcertSongsResponse = FunctionFoxSingersConcertSongs(singer_id, type, singer, team).request()

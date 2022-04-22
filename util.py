@@ -3,10 +3,12 @@ import os
 import time
 from random import random
 
-from download import cmd
 from functions import FunctionFoxSongs, FunctionFoxSingersOfTeam
 
 __cnt__ = 0
+basePath = "E:/阿里云盘/songs"
+# cmd = "aria2c  --dir={} --out={} {}"
+cmd = "IDMan.exe  /p {} /f {} /d {}"
 
 
 def hexMd5(str):
@@ -42,6 +44,7 @@ def makePic(basePath, filename, url):
 
     if not os.path.exists(filePath):
         time.sleep(0.5)
+        url = url.strip()
         if os.system(cmd.format('"' + path + '"', '"##' + filename + '.jpg"', url)) == 0:
             print("文件：", filePath, " 创建成功")
         else:
@@ -77,7 +80,7 @@ def makeVideo(basePath, detail, title, session):
 
 def upload(detail, path, title, v, type):
     if len(v) > 5:
-        if v.startswith("http://foxvod.zero248.top"):
+        if v.find("http://foxvod.zero248.top") != -1:
             time.sleep(1)
             FunctionFoxSongsResponse = FunctionFoxSongs(detail.id).request()
             if FunctionFoxSongsResponse["msg"] == 200:
@@ -93,49 +96,56 @@ def upload(detail, path, title, v, type):
                             v = item["i"]["urlgif"] if len(item["i"]["urlgif"]) > 5 else item["i"]["url"]
                             # if v.rfind(".jpg") != -1:
                             #     v = v[:v.rfind(".mp4")]
-            else:
+                        type = 'i'
+            elif FunctionFoxSongsResponse["msg"] == 400:
                 global __cnt__
                 __cnt__ += 1
                 t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
                 print(t, "请求失败： ", FunctionFoxSongsResponse)
                 with open("failDownload.txt", "a+", encoding='utf-8') as file:
-                    file.writelines("t {}\n".format(detail))
-                if __cnt__ == 10:
+                    file.writelines(t + " {}\n".format(detail))
+                if __cnt__ == 30:
                     return -1
                 else:
                     time.sleep(2)
                     return 1
-        else:
-            # print("not startswith ", "http://foxvod.zero248.top")
-            return 1
+            else:
+                return -1
+        # else:
+        #
+        #     # print("not startswith ", "http://foxvod.zero248.top")
+        #     return 1
     if len(v) > 5:
         print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), title)
-        if download(path, title, v, type) != 0:
-            return -1
-        else:
-            return 0
+        return download(path, title, v, type)
+
     return 1
 
 
-def download(path, title, v, type):
+def download(path, title:str, v, type):
     start = v.rfind("/")
-    end = v.rfind("?")
-    # if type == 'v':
+    end = len(v) if v.rfind("?") == -1 else v.rfind("?")
     path = path.replace('*', '')
     title = title.replace('*', '')
-    if not os.path.exists(path + title + "_" + v[start + 1:end]):
-        if os.system(cmd.format('"' + path + '"', '"' + title + "_" + v[start + 1:end] + '"', v)) == 0:
-            print("文件：", path + title + "_" + v[start + 1:end], " 创建成功")
-        else:
-            print(cmd.format(path, title + "_" + v[start + 1:end], v), " Error")
-            return -1
-    # else:
-        # if not os.path.exists(path + title + "_" + v[start + 1:end]):
-        #     if os.system(cmd.format('"' + path + '"', '"' + title + "_" + v[start + 1:end] + '"', v)) == 0:
-        #         print("文件：", path + title + "_" + v[start + 1:end], " 创建成功")
-        #     else:
-        #         print(cmd.format(path, title + "_" + v[start + 1:end], v), " Error")
-        #         return -1
+    v = v.strip()
+    if type == 'i':
+        title2 = title[title.rfind('_')+1:]
+        if not os.path.exists(path + title + "_" + v[start + 1:end]) and not os.path.exists(path + title2 + "_" + v[start + 1:end]):
+            if os.system(cmd.format('"' + path + '"', '"' + title + "_" + v[start + 1:end] + '"', v)) == 0:
+                print("文件：", path + title + "_" + v[start + 1:end], " 创建成功")
+                return 1
+            # else:
+            #     print(cmd.format(path, title + "_" + v[start + 1:end], v), " Error")
+            #     return -1
+    else:
+        title2 = title[title.rfind('_') + 1:]
+        if not os.path.exists(path + title + "_" + v[start + 1:end] + '.mp4') and not os.path.exists(path + title2 + "_" + v[start + 1:end] + '.mp4') :
+            if os.system(cmd.format('"' + path + '"', '"' + title + "_" + v[start + 1:end] + '.mp4' + '"', v)) == 0:
+                print("文件：", path + title + "_" + v[start + 1:end] + '.mp4', " 创建成功")
+                return 1
+            # else:
+            #     print(cmd.format(path, title + "_" + v[start + 1:end] + '.mp4', v), " Error")
+            #     return -1
     return 0
 
 
@@ -150,3 +160,7 @@ def getRealImg(item_id, singer):
     else:
         return singer.img
 
+
+if __name__ == '__main__':
+    v = 'abc'
+    print(v[:len(v) if v.rfind("b") == -1 else v.rfind("b")])

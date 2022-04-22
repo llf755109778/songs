@@ -46,7 +46,7 @@ class Singer(Base):
 
     def __str__(self):
         return 'Singer: id:{}, type:{}, team:{}, singerid:{}, singer:{}, ' \
-               'time:{}, title:{}, img:{}, ok:{}'.format(self.id, self.type, self.type, self.singerid, self.singer,
+               'time:{}, title:{}, img:{}, ok:{}'.format(self.id, self.type, self.team, self.singerid, self.singer,
                                                          self.time, self.title, self.img, self.ok)
 
 
