@@ -91,7 +91,7 @@ def download():
         .filter(or_(Download.ok == 0, Download.ok.is_(None)))\
         .filter(Download.isvideo == 1)\
         .filter(Download.id != '0')\
-        .limit(2500)
+        .filter(Download.idd >= 47228)
     i = 1
     # lists = session.query(Download).filter(or_(Download.ok == 0, Download.ok.is_(None)))\
     #     .filter(Download.id != '0').filter(Download.idd > 41624)
@@ -117,6 +117,7 @@ def video(info, session):
         details = session.query(VideoDetails).filter_by(id=i.id)
         for detail in details:
             path = basePath + '/' + detail.stillbtns["team"] + '/' + detail.stillbtns["singer"]
+            path = path.replace('*', '')
             if not os.path.exists(path):
                 os.makedirs(path)
                 print("文件夹：", path, " 创建成功")
